@@ -1,0 +1,84 @@
+/* =========================================================================
+   PREMIUM EXPERIENCE CARD LAYOUT
+   ========================================================================= */
+
+.premium-popup-card {
+  background-color: #121316;    /* Deep matte charcoal */
+  border: 1px solid #22242a;     /* Refined wireframe edge */
+  border-radius: 16px;          /* Smooth rounded corners */
+  padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto 50px auto;     /* Adds a clean 50px separation layout gap */
+  display: grid;
+  grid-template-columns: 200px 1fr; /* Asymmetrical columns */
+  gap: 32px;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-popup-card:hover {
+  transform: translateY(-2px);
+  border-color: #31353f;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.7);
+}
+
+.card-sidebar {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #a1a1aa;
+  line-height: 1.6;
+}
+
+.card-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card-main-content h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.card-main-content p {
+  font-size: 1.05rem;
+  color: #d4d4d8;
+  line-height: 1.6;
+}
+
+.card-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card-bullet-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 1rem;
+  color: #d4d4d8;
+  line-height: 1.6;
+}
+
+.card-bullet-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #e28743; /* Matches the warm amber bullet point from your sample image */
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .premium-popup-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 24px;
+  }
+}

@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+/* -------------------------------------------------------------------------
+   1. PREMIUM THEME TOKENS (Sophisticated Warm-Minimalist Palette)
+   ------------------------------------------------------------------------- */
+:root {
+  /* Background Layers - Editorial Warm Chalk & Slate */
+  --bg-primary: #fbfbf9;        /* Warm alabaster/chalk canvas - easy on the eyes */
+  --bg-secondary: #f3f3ee;      /* Creamy concrete tone for structural cards and blocks */
+  --bg-navbar: rgba(251, 251, 249, 0.85); /* Semi-transparent frosted glass over alabaster */
+  
+  /* Typography Scale - High-End Editorial Readability */
+  --text-heading: #1a1c1e;      /* Deep ink-charcoal for crisp, readable typography */
+  --text-body: #474b4f;         /* Balanced graphite for readable articles and details */
+  --text-muted: #797e85;        /* Industrial stone gray for dates, labels, and tags */
+
+  /* Vibrant Interaction Accents - Burnt Terracotta & Ochre */
+  --accent-primary: #d95438;    /* Matte terracotta crimson for main hooks, links, and borders */
+  --accent-secondary: #e28743;  /* Warm ochre/amber for smooth gradient variations */
+  --accent-glow: rgba(217, 84, 56, 0.08); /* Sophisticated, non-neon soft tint highlight */
+  
+  /* Layout Lines */
+  --border-subtle: #2e3135;     /* Structural raw iron/charcoal lines for stark boundaries */
+}
+
+/* -------------------------------------------------------------------------
+   2. GLOBAL DOCUMENT & TEXTURE SETUP
+   ------------------------------------------------------------------------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-body);
+    overflow-x: hidden;
+  }
+
+  /* Structural selection highlight matching the organic warm palette */
+  ::selection {
+    background-color: #2e3135;
+    color: var(--bg-primary);
+  }
+}
+
+/* Universal box reset and structural layout defaults */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Accessibility: Sharp, geometric focus rings for a high-end structural look */
+*:focus-visible {
+  outline: 2px solid var(--text-heading);
+  outline-offset: 3px;
+}
+
+/* Minimalist scrollbar to match the clean architectural aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 0px; /* Sharp, modern geometric edges */
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-heading);
+}
+
+/* -------------------------------------------------------------------------
+   3. REUSABLE PREMIUM PORTFOLIO COMPONENTS & UTILITIES
+   ------------------------------------------------------------------------- */
+
+/* Minimalist Floating Navigation Bar Base */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75px; /* Slightly sleeker and thinner layout */
+  background-color: var(--bg-navbar);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 2px solid var(--border-subtle); /* Confident architectural line */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-container {
+  max-width: 1250px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+}
+
+/* Elegant, structural uppercase utility typography */
+.navbar-links a {
+  color: var(--text-heading);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--accent-primary);
+}
+
+/* Solid Geometric Brutalist Call-to-Action Button */
+.portfolio-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-heading);
+  border: 2px solid var(--border-subtle);
+  background-color: var(--bg-primary);
+  padding: 12px 24px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 0px; /* Pure geometric look instead of rounded corners */
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+/* Bold offset-shadow hover interaction instead of a cyber glow */
+.portfolio-btn:hover {
+  background-color: var(--bg-primary);
+  transform: translate(-3px, -3px);
+  box-shadow: 4px 4px 0px var(--border-subtle);
+}
+
+/* -------------------------------------------------------------------------
+   4. LAYOUT SECTION CONFIGURATIONS
+   ------------------------------------------------------------------------- */
+
+/* Premium Editorial Typography Styles */
+.portfolio-h1 {
+  font-family: 'Playfair Display', Georgia, serif; /* Shifts from tech sans to high-end editorial serif */
+  font-size: clamp(38px, 7vw, 68px);
+  font-weight: 900;
+  color: var(--text-heading);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.portfolio-h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(24px, 4vw, 30px);
+  font-weight: 800;
+  color: var(--text-heading);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+/* Crisp, asymmetrical accent block indicator instead of a glowing rule */
+.portfolio-underline {
+  width: 40px;
+  height: 6px;
+  background-color: var(--accent-primary);
+  margin-top: 12px;
+  border-radius: 0px;
+}
+
+/* Sharp, Framed Component Canvas Card */
+.portfolio-card {
+  background-color: var(--bg-secondary);
+  border: 2px solid var(--border-subtle);
+  border-radius: 0px; /* High-contrast flat framing */
+  padding: 32px;
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-card:hover {
+  transform: translateY(-2px);
+  background-color: var(--bg-primary);
+  box-shadow: 6px 6px 0px var(--border-subtle);
+}
